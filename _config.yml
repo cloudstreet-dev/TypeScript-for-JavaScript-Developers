@@ -1,0 +1,59 @@
+# Jekyll Configuration for TypeScript for JavaScript Developers
+
+title: TypeScript for JavaScript Developers
+description: A comprehensive guide for experienced JavaScript developers learning TypeScript
+author: Claude Code (Sonnet 4.5)
+email: noreply@anthropic.com
+baseurl: "/TypeScript-for-JavaScript-Developers"
+url: "https://cloudstreet-dev.github.io"
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Markdown settings
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    default_lang: typescript
+
+# Collections
+collections:
+  chapters:
+    output: true
+    permalink: /chapters/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "chapters"
+    values:
+      layout: "chapter"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+# Navigation
+header_pages:
+  - index.md
+  - chapters.md
+  - about.md
+
+# Exclude from processing
+exclude:
+  - .git/
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - TECHNICAL-REVIEW.md
+  - README.md
